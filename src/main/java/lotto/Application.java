@@ -1,5 +1,9 @@
 package lotto;
 
+import camp.nextstep.edu.missionutils.Randoms;
+
+import java.util.List;
+
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
 public class Application {
@@ -20,10 +24,19 @@ public class Application {
         }
     }
 
+    //3. 로또 발행
+    public static List<Integer> createLotto() {
+        List<Integer> lotto =Randoms.pickUniqueNumbersInRange(1,45,6);
+        return lotto; // 배열 반환
+    }
+
     public static void main(String[] args) {
         //1.로또 구입 금앱 입력받기 및 예외처리
         System.out.println("구입금액을 입력해 주세요.");
+        //2. 로또 개수 구하기
         int lottoCount=getMoney()/1000;
+
+        //1번 메서드 확인용 출력
         System.out.println(lottoCount);
 
     }
